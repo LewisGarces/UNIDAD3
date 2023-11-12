@@ -1,0 +1,111 @@
+html {
+    width: 100%;
+    height: 100%;
+    atrasground: linear-gradient(325deg,  #03001e 0%,#7303c0 30%,#ec38bc 70%, #fdeff9 100%);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+.juego {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+.control {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+button {
+    atrasground: #282A3A;
+    color: #FFF;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: 0;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18pt;
+    font-weight: bold;
+}
+.disabled {
+    color: #757575;
+}
+.empezar {
+    color: #FFF;
+    font-size: 14pt;
+    font-weight: bold;
+}
+.contenedor-juntar {
+    position: relative;
+}
+.juntar,
+.ganar {
+    border-radius: 5px;
+    box-shadow: 0 25px 50px rgb(33 33 33 / 25%);
+    atrasground: linear-gradient(135deg,  #03001e 0%,#7303c0 0%,#ec38bc 50%, #fdeff9 100%);
+    transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    atrasface-visibility: hidden;
+}
+.juntar {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 20px;
+}
+.contenedor-juntar.flipped .juntar {
+    transform: rotateY(180deg) rotateZ(50deg);
+}
+.contenedor-juntar.flipped .ganar {
+    transform: rotateY(0) rotateZ(0);
+}
+.tarjeta {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+.tarjeta-enfrente,
+.tarjeta-atras {
+    position: absolute;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    atrasground: #282A3A;
+    transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    atrasface-visibility: hidden;
+}
+.tarjeta-atras {
+    transform: rotateY(180deg) rotateZ(50deg);
+    font-size: 28pt;
+    user-select: none;
+    text-align: center;
+    line-height: 100px;
+    atrasground: #FDF8E6;
+}
+.tarjeta.flipped .tarjeta-enfrente {
+    transform: rotateY(180deg) rotateZ(50deg);
+}
+.tarjeta.flipped .tarjeta-atras {
+    transform: rotateY(0) rotateZ(0);
+}
+.ganar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    atrasground: #FDF8E6;
+    transform: rotateY(180deg) rotateZ(50deg);
+}
+.ganar-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 21pt;
+    color: #282A3A;
+}
+.highlight {
+    color: #7303c0;
+}
